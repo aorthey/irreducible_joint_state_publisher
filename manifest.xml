@@ -1,0 +1,15 @@
+<package>
+  <description brief="joint_state_publisher_standalone">
+
+     joint_state_publisher_standalone
+
+  </description>
+  <author>Andreas OrtheyH0210561336454</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/joint_state_publisher_standalone</url>
+  <depend package="rospy"/>
+
+</package>
+
+

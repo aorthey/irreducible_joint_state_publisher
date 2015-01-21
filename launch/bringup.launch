@@ -1,0 +1,32 @@
+<launch>
+
+	<group ns="wall">
+		<param name="tf_prefix" value="wall"/>
+
+		<param name="wall_description" textfile="$(find joint_state_publisher_standalone)/wall.urdf" />
+		<node name="wall_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+			<remap from="robot_description" to="wall_description" />
+			<param name="publish_frequency" value="50" />
+		</node>
+
+	</group>
+
+	<group ns="robot">
+		<param name="tf_prefix" value="robot"/>
+		<param name="use_gui" value="true"/>
+
+		<param name="robot_description" textfile="$(find hrp2_14_description)/urdf/hrp2_14_capsule.urdf" />
+
+
+		<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+			<param name="publish_frequency" value="50" />
+		</node>
+	</group>
+
+<!--
+	<node pkg="tf" type="static_transform_publisher" name="world_robot"
+	args="0 0 0 0 0 0 /robot/l_sole /wall/base_link 100"/> 
+-->
+</launch>
+
+
